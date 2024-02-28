@@ -2,18 +2,18 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "maptiles",
-  "description": "To create maps from tiles, 'maptiles' downloads, composes and displays tiles from a large number of providers (e.g. 'OpenStreetMap', 'Stamen', 'Esri', 'CARTO', or 'Thunderforest').",
+  "description": "To create maps from tiles, 'maptiles' downloads, composes and displays tiles from a large number of providers (e.g. 'OpenStreetMap', 'Stadia', 'Esri', 'CARTO', or 'Thunderforest').",
   "name": "maptiles: Download and Display Map Tiles",
   "codeRepository": "https://github.com/riatelab/maptiles/",
   "issueTracker": "https://github.com/riatelab/maptiles/issues/",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.3.1 (2023-06-16)",
+  "runtimePlatform": "R version 4.3.2 (2023-10-31)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -117,15 +117,27 @@
     },
     "4": {
       "@type": "SoftwareApplication",
+      "identifier": "digest",
+      "name": "digest",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=digest"
+    },
+    "5": {
+      "@type": "SoftwareApplication",
       "identifier": "graphics",
       "name": "graphics"
     },
-    "5": {
+    "6": {
       "@type": "SoftwareApplication",
       "identifier": "grDevices",
       "name": "grDevices"
     },
-    "6": {
+    "7": {
       "@type": "SoftwareApplication",
       "identifier": "png",
       "name": "png",
@@ -137,7 +149,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=png"
     },
-    "7": {
+    "8": {
       "@type": "SoftwareApplication",
       "identifier": "terra",
       "name": "terra",
@@ -149,12 +161,12 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=terra"
     },
-    "8": {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "tools",
       "name": "tools"
     },
-    "9": {
+    "10": {
       "@type": "SoftwareApplication",
       "identifier": "slippymath",
       "name": "slippymath",
@@ -166,7 +178,12 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=slippymath"
     },
+    "11": {
+      "@type": "SoftwareApplication",
+      "identifier": "utils",
+      "name": "utils"
+    },
     "SystemRequirements": null
   },
-  "fileSize": "1154.742KB"
+  "fileSize": "1140.47KB"
 }
