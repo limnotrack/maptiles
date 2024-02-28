@@ -194,18 +194,21 @@ warp_method <- function(bricks, images, forceDownload) {
   # wrapped with try catch - if gdal warp fails defaults to terra::merge
   out_ras <- tryCatch(
     {
-      save_ras <- function(ras, .img) {
-        name <- paste(file_path_sans_ext(.img),
+      save_ras <- function(ras, .img, nlyr) {
+        name <- paste(tools::file_path_sans_ext(.img),
           ".tif",
           sep = ""
         )
         if (!file.exists(name) | isTRUE(forceDownload)) {
+          if (terra::nlyr(ras) > nlyr) ras <- terra::subset(ras, 1:nlyr)
           terra::writeRaster(ras, name, overwrite = TRUE)
         }
         return(name)
       }
+      nlyr <- sapply(bricks, terra::nlyr) |>
+        median()
 
-      ras_files <- mapply(save_ras, bricks, images)
+      ras_files <- mapply(save_ras, bricks, images, nlyr)
 
       merge_path <- tempfile(fileext = ".tif")
       sf::gdal_utils(
