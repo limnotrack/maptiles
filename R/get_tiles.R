@@ -98,19 +98,6 @@ get_tiles <- function(x,
   # get query parameters according to provider
   param <- get_param(provider)
 
-<<<<<<< HEAD
-  # extension management
-  if (length(grep("jpg", param$q)) > 0) {
-    ext <- "jpg"
-  } else if (length(grep("jpeg", param$q)) > 0) {
-    ext <- "jpeg"
-  } else if (length(grep("png", param$q)) > 0) {
-    ext <- "png"
-  } else if (length(grep("webp", param$q)) > 0) {
-    ext <- "webp"
-  }
-  tile_grid$ext <- ext
-=======
   # get zoom level
   zoom <- get_zoom(zoom, res$bbox_lonlat)
 
@@ -130,7 +117,6 @@ get_tiles <- function(x,
 
   # get tile list
   tile_grid <- slippymath::bbox_to_tile_grid(res$bbox_lonlat, zoom)
->>>>>>> 1c051c41396063e46d2762280010640f8b29e8f6
 
   # download images
   images <- download_tiles(tile_grid, param, apikey, verbose,
